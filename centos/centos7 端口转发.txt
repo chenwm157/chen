@@ -1,0 +1,5 @@
+firewall-cmd --zone=public --add-port=6688/tcp --permanent
+firewall-cmd --add-masquerade --permanent
+firewall-cmd --add-forward-port=port=6688:proto=tcp:toaddr=172.65.239.73:toport=14444 --permanent
+firewall-cmd --add-masquerade --permanent
+firewall-cmd --reload
